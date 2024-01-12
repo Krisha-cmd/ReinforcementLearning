@@ -9,7 +9,7 @@ Original file is located at
 # CartPol Environment to balance a stick
 """
 
-!pip install stable-baselines3[extra]
+# !pip install stable-baselines3[extra]
 
 import os
 import gymnasium as gym
@@ -20,7 +20,7 @@ from stable_baselines3.common.evaluation import evaluate_policy #evaluating the 
 """# Load Environment"""
 
 env_name='CartPole-v1' #prebuilt environment
- env=gym.make(env_name)
+env=gym.make(env_name)
 
 """## Understanding Environment"""
 
