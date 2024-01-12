@@ -32,19 +32,6 @@ print(env.observation_space) #cart position, cart velocity, pole angle, pole ang
 print(env.action_space.sample() ) #every environment has an action space and an observation space
 print(env.observation_space.sample())
 
-episodes=10 #testing the environment 5 times (for cartpole each episode is 200 frames)
-for episode in range(episodes):
-  state=env.reset() #initial state of the environment and set of observations
-  done=False
-  score=0
-
-  while not done:
-    env.render() #view the graphical representaion of the environment
-    action=env.action_space.sample() #random action from the sample action space
-    n_state,reward,done,info=env.step(action) #getting the new environment variables by passing the action into the environment, next state, reward, is it done?
-    score+=reward
-    print('Episode{} Score{}'.format(episode+1,score))
-
 """## Training
  Model based or Model free?
 
@@ -125,8 +112,6 @@ env=DummyVecEnv([lambda:env])
 obs=env.reset() #initial observations
 model.predict(obs) #gives a prediction of action (not next state)
 
-from google.colab import drive
-drive.mount('/content/drive')
 
 episodes=10
 for episode in range(episodes):
